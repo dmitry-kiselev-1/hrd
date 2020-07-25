@@ -16,9 +16,9 @@ export class ProductFormComponent implements OnInit {
   updateMode = false;
 
   formGroup: FormGroup;
-  private categories: Category[] = [];
-  private product: Product;
-  private routeProductId: number;
+  categories: Category[] = [];
+  product: Product;
+  routeProductId: number;
 
   constructor(
     private router: Router,

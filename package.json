@@ -5,9 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build --prod": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "npm install": "npm install"
   },
   "private": true,
   "dependencies": {
@@ -19,7 +21,8 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
-    "bootstrap": "^4.5.0",
+    "@ng-bootstrap/ng-bootstrap": "~4.0.0",
+    "bootstrap": "^4.0.0",
     "core-js": "^2.5.4",
     "lodash": "^4.17.19",
     "moment": "^2.27.0",

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { ROUTES } from './app.routes';
 import { HomeComponent } from './components/home/home.component';
@@ -27,7 +27,6 @@ import { ProductFormComponent } from './components/products/product-form/product
     BrowserModule,
     FormsModule,
     NgbModule,
-    NgbCollapseModule,
     RouterModule.forRoot(ROUTES),
     ReactiveFormsModule,
     NgbModule
