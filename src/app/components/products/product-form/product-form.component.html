@@ -1,0 +1,93 @@
+<div class="container">
+
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+
+    <div class="form-row">
+      <!-- Name -->
+      <div class="col-md-6 mb-3">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name"
+                 autocomplete="off"
+                 formControlName="name"
+                [ngClass]="formGroup.controls['name'].valid ? 'is-valid' : 'is-invalid'">
+          <div class="invalid-feedback">
+            Please provide a valid Product Name (not empty and less than 200 symbols).
+          </div>
+        </div>
+      </div>
+      <!-- Rating -->
+      <div class="col-md-3 mb-3">
+        <div class="form-group">
+          <label for="rating">Rating</label>
+          <input type="number" class="form-control" id="rating"
+                 min="0" max="10"
+                 formControlName="rating"
+                 [ngClass]="formGroup.controls['rating'].valid ? 'is-valid' : 'is-invalid'">
+          <div class="invalid-feedback">
+            Please provide a valid Rating (between 0 and 10).
+          </div>
+        </div>
+      </div>
+      <!-- Featured -->
+      <div class="col-md-3 mb-3">
+        <div class="form-group">
+          <label>Featured</label>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input big-checkbox" id="featured"
+                   [checked]="formGroup.controls['rating'].value > 8"
+                   disabled>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <!-- Brand -->
+      <div class="col-md-3 mb-3">
+        <div class="form-group">
+          <label for="brand">Brand</label>
+          <input type="text" class="form-control" id="brand"
+                 autocomplete="off"
+                 formControlName="brand">
+        </div>
+      </div>
+      <!-- Categories -->
+      <div class="col-md-3 mb-3">
+        <div class="form-group">
+          <label for="categories">Categories</label>
+          <select multiple class="form-control categories" id="categories"
+                  formControlName="categories"
+                  [ngClass]="formGroup.controls['categories'].valid ? 'is-valid' : 'is-invalid'">
+            <ng-container *ngFor="let category of this.categories">
+              <option value="{{category.id}}">{{category.name}}</option>
+            </ng-container>
+          </select>
+          <div class="invalid-feedback">
+            Please provide from 1 to 5 categories <br/> (Ctrl + Click for multiple selection).
+          </div>
+        </div>
+      </div>
+      <!-- ExpirationDate -->
+      <div class="col-md-3 mb-3">
+        <div class="form-group">
+          <label for="expirationDate">Expiration Date</label>
+          <input type="date" class="form-control" id="expirationDate"
+                 autocomplete="off"
+                 formControlName="expirationDate"
+                 [ngClass]="formGroup.controls['expirationDate'].valid ? 'is-valid' : 'is-invalid'">
+          <div class="valid-feedback"
+               [hidden]="formGroup.controls['expirationDate'].value">
+            The product haven't Expiration Date.
+          </div>
+          <div class="invalid-feedback">
+           Expiration Date (if provided) must be not less than 30 days since now.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="formGroup.invalid">Submit</button>
+  </form>
+
+</div>

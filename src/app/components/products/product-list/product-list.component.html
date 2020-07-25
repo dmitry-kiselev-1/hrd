@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-4" *ngFor="let product of products">
+    <div class="b-product" [ngClass]="{'b-product_featured': product.featured}">
+      <h2>{{ product.name }}</h2>
+      <div>
+        <ul class="b-product-parameters">
+          <li class="b-product-parameters__item">
+            <b>Id:</b> {{ product.id }}
+          </li>
+          <li class="b-product-parameters__item">
+            <b>Rating:</b> {{ product.rating }}
+          </li>
+          <li class="b-product-parameters__item">
+            <b>Brand:</b> {{ product.brand }}
+          </li>
+          <li class="b-product-parameters__item">
+            <b>Featured:</b> {{ product.featured ? 'Yes' : 'No' }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button type="button" class="btn btn-link" routerLink="/product/update/{{product.id}}">Edit</button>
+    <button type="button" class="btn btn-link" (click)="removeProduct(product)">Delete</button>
+  </div>
+</div>

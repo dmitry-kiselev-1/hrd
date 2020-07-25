@@ -1,0 +1,17 @@
+.b-product {
+  margin: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid #9a9a9a;
+  background-color: #f9f9f9;
+
+&_featured {
+   border-color: #ffb03e;
+   background-color: #fff8ee;
+ }
+}
+
+.b-product-parameters {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
