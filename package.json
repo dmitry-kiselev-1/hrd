@@ -7,6 +7,7 @@
     "build": "ng build",
     "build --prod": "ng build --prod",
     "npm run build -- --prod": "npm run build -- --prod",
+    "build for GitHub pages": "ng build --prod --output-path docs --base-href /hrd/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
