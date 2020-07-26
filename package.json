@@ -9,7 +9,7 @@
     "npm run build -- --prod": "npm run build -- --prod",
     "build for GitHub pages": "ng build --prod --output-path docs --base-href https://dmitry-kiselev-1.github.io/hrd/",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "ng lint --fix",
     "e2e": "ng e2e",
     "npm install": "npm install"
   },
