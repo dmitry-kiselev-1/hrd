@@ -12,5 +12,6 @@ export const ROUTES: Routes = [
       { path: 'create', component: ProductFormComponent },
       { path: 'update/:id', component: ProductFormComponent },
     ]},
-  { path: '**', component: NoContentComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: '**', component: NoContentComponent }
 ];
